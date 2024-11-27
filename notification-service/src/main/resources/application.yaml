@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: notification-service
+  temporal:
+    namespace: default
+    connection:
+      target: 127.0.0.1:7233
+    workersAutoDiscovery:
+      packages: ru.aston.notification
+  kafka:
+    bootstrap-servers: localhost:9092
+    security:
+      protocol: PLAINTEXT
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+server:
+  port: 8081
